@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/formulario.css">
+    <script defer src="../js/empleados/empleados.js" type="module" ></script>
+    <title>Empleado</title>
+</head>
+<body>
+  <!--* menu del sitio -->
+  <header class="header">
+    <nav class="navegacion">
+      <a href="../index.html" class="logo">
+        <img src="../img/fotoperfil.png" width="50px" alt="logo">
+        <div class="logo">
+          Rol de Pagos
+        </div>
+      </a>
+      <ul class="menu">
+        <li><a href="./cargo.html">Cargos</a></li>
+        <li><a href="./departamento.html">Departamentos</a></li>
+        <li><a href="./empleado.html">Empleados</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <div class="form-header">
+        <h2>Formulario de Empleados</h2>
+      </div>
+      <form id="form-empleado" class="form">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            placeholder="Ingrese un nombre"
+            title="El nombre solo acepta letras y espacios en blanco"
+            pattern="^[A-Za-zÑñáéíóú\s]+$"
+            required
+            value=""
+          />
+          <label for="nombre">Cédula</label>
+          <input
+            type="text"
+            name="cedula"
+            id="cedula"
+            placeholder="Ingrese cédula"
+            title="El numero de cedula solo acepta números positivos"
+            pattern="^[0-9]+"
+            required
+            value=""
+          />
+          
+          <label for="nombre">Cargo</label>
+          <select name="cargo" id="cargoop">
+            <option value="1">Desarrollador</option>
+            <option value="2">Diseñador</option>
+          </select>
+
+          <label for="cargo">Departamento</label>
+          <select name="departamento" id="departamentoop"> 
+            <option value="1">Desarrollo</option>
+            <option value="2">Diseño</option>     
+          </select>
+
+
+          <label for="sueldo">Sueldo</label>
+          <input
+            type="text"
+            name="sueldo"
+            id="sueldo"
+            placeholder="Cantidad de sueldo del empleado"
+            title="El sueldo solo acepta números positivos"
+            pattern="^[0-9]+"
+            required
+            value=""
+          />
+
+        </div>
+        <div class="form-check">
+          <label
+            >Activo
+            <input type="checkbox" id="activo" value="activo" checked />
+          </label>
+        </div>
+        <button
+          id="enviar"
+          type="submit"
+          name="enviar"
+        >
+          Insertar
+        </button>
+       
+      </form>
+       <div class="consulta none table-responsive" id="consulta">
+            <h3>Listado de Empleados</h3>
+          <table class="consulta-est-emp" id="consulta-est" border="1">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Cédula</th>
+                <th>Cargo</th>
+                <th>Departamento</th>
+                <th>Sueldo</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>  
+            </thead>
+            <tbody class="detalle-est" id="detalle-empleados">
+              <tr>
+                <td>1</td>
+                <td>Isacc</td>
+                <td>0123255202</td>
+                <td>Desarrollador</td>
+                <td>Desarrollo</td>
+                <td>550</td>
+                <td>Activo</td>
+                <td>
+                  <button>✏️</button>
+                  <button>❌</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>Marcela</td>
+                <td>0123456789</td>
+                <td>Diseñador</td>
+                <td>Diseño</td>
+                <td>500</td>
+                <td>Inactivo</td>
+                <td>
+                  <button>✏️</button>
+                  <button>❌</button>
+                </td>
+              </tr>
+          
+            </tbody>
+          </table>
+       </div>    
+    </section>
+  </main>
+</body>
+</html>
